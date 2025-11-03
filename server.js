@@ -174,6 +174,10 @@ app.use('/api/payments/webhook', express.raw({ type: '*/*' }));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
+app.get('/', (req, res) => {
+  res.send('API is running successfully 🚀');
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({
